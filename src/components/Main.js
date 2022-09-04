@@ -1,7 +1,7 @@
 import React from 'react'
-import Meals from './Meals'
-import Navigation from './Navigation'
-import Search from './Search'
+import Meals from './meals/Meals'
+import Navigation from './navigation/Navigation'
+import Search from './search/Search'
 
 const Main = (props) => {
   return (

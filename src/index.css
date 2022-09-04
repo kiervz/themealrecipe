@@ -9,3 +9,16 @@ body {
   margin: 0 min(5vw, 10em);
   font-family: "Poppins", sans-serif;
 }
+
+a {
+  text-decoration: none;    
+  color: #4E4E4E;
+}
+
+.d-flex__space__between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+

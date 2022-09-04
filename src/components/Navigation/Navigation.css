@@ -1,0 +1,18 @@
+
+.header {
+    height: 50px;
+    padding: 20px 0;
+}
+  
+.favorite {
+    font-size: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.favorite:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+}
