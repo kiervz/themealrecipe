@@ -9,6 +9,7 @@ import './Meals.css'
 
 const Meals = () => {
     const [meals, setMeals] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const dispatch = useDispatch()
     
     const fetchMeals = () => {
@@ -16,9 +17,10 @@ const Meals = () => {
             .then(({data}) => {
                 dispatch(mealsAction.getMeals(data.meals))
                 setMeals(data.meals)
+                setIsLoading(true)
             }).catch((error) => {
                 console.log(error.response);
-            })
+            }).finally(() => setIsLoading(true))
     }
 
     useEffect(() => {
@@ -27,7 +29,14 @@ const Meals = () => {
     
     return (
         <div className='meals'>
-            {meals.length > 0 ? meals.map(meal => <MealItem meal={meal} key={meal.idMeal}/>) : 'No Data Found.'}
+            {
+                !isLoading ? <h2 style={{textAlign: 'center'}}>Loading...</h2> 
+                : 
+                (meals?.length > 0 ? 
+                    meals.map(meal => <MealItem meal={meal} key={meal.idMeal}/>) 
+                    : 
+                    <h2 style={{textAlign: 'center'}}>No Data Found.</h2>)
+            }
         </div>
     )
 }
