@@ -1,0 +1,7 @@
+.meals {
+    display: grid;
+    /* min-height: 100vh; */
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-gap: 1em;
+    grid-auto-flow: dense;
+}

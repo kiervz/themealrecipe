@@ -21,4 +21,11 @@ a {
   align-items: center;
 }
 
-
+.badge {
+  background-color: #016DD9;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  padding: 3px 7px;
+  width: 100%;
+}
