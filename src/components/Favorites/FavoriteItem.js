@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import { FaTrash } from 'react-icons/fa'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { mealsAction } from '../../store/meals-slice'
 
 import './FavoriteItem.css'
@@ -9,7 +9,6 @@ import './FavoriteItem.css'
 const FavoriteItem = ({meal}) => {
     const mealURL = `/meal/${meal.idMeal}`
     const dispatch = useDispatch()
-    const test = useSelector(state => state.meal.favorites)
 
     const onUnFavorite = () => {
         dispatch(mealsAction.removeFavorite(meal.idMeal))
