@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import { useDispatch } from 'react-redux'
-import { mealsAction } from '../../store/meals-slice';
+import { useSelector } from 'react-redux'
 
 import MealItem from './MealItem'
 
@@ -10,12 +9,11 @@ import './Meals.css'
 const Meals = () => {
     const [meals, setMeals] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const dispatch = useDispatch()
+    const searchMeals = useSelector(state => state.meal.meals)
     
     const fetchMeals = () => {
         axios.get('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
             .then(({data}) => {
-                dispatch(mealsAction.getMeals(data.meals))
                 setMeals(data.meals)
                 setIsLoading(true)
             }).catch((error) => {
@@ -26,6 +24,10 @@ const Meals = () => {
     useEffect(() => {
         fetchMeals()
     }, [])
+
+    useEffect(() => {
+        setMeals(searchMeals)
+    }, [searchMeals])
     
     return (
         <div className='meals'>
