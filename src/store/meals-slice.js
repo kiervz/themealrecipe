@@ -3,11 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const mealsSlice = createSlice({
     name: 'meals',
     initialState: {
-        meals: []
+        meals: [],
+        favorites: []
     },
     reducers: {
         getMeals(state, action) {
             state.meals = action.payload
+        },
+        getFavories(state, action) {
+            state.favorites.push(...action.payload) 
         }
     }
 })
