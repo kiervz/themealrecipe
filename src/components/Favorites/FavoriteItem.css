@@ -53,7 +53,7 @@
 }
 
 .icon__favorite:hover{
-    background-color: #FF4081;
+    background-color: #d11f1f;
     transition: .5s ease;
     cursor: pointer;
 }
