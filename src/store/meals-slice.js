@@ -12,6 +12,11 @@ const mealsSlice = createSlice({
         },
         getFavories(state, action) {
             state.favorites.push(...action.payload) 
+        },
+        removeFavorite(state, action) {
+            const tempFavorites = state.favorites.filter(favorite => favorite.idMeal !== action.payload)
+
+            state.favorites = tempFavorites
         }
     }
 })
