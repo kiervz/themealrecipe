@@ -1,7 +1,7 @@
 {
   "name": "themealrecipe",
   "version": "0.1.0",
-  "homepage": "https://kiervz.github.io/themealrecipe",
+  "homepage": "https://kiervz.github.io/themealrecipe/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
