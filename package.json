@@ -1,5 +1,4 @@
 {
-  "homepage": "https://kiervz.github.io/themealrecipe",
   "name": "themealrecipe",
   "version": "0.1.0",
   "private": false,
@@ -44,6 +43,5 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
   }
 }
